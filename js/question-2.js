@@ -17,8 +17,6 @@ async function getProperties() {
         resultsContainer.innerHTML = "";
 
         for (let i = 0; i < rating.length; i++) {
-            
-            // console.log(rating[i].name);
 
             if (i === 8) { 
                 break; 
