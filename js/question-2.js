@@ -4,7 +4,7 @@ const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=
 
 const resultsContainer = document.querySelector(".results"); 
 
-async function getProperties() {
+async function getGamesProperties() {
     try {
         const response = await fetch(url);
 
@@ -12,20 +12,20 @@ async function getProperties() {
 
         // console.log(data);
 
-        const rating = data.results;
+        const games = data.results;
 
         resultsContainer.innerHTML = "";
 
-        for (let i = 0; i < rating.length; i++) {
+        for (let i = 0; i < games.length; i++) {
 
             if (i === 8) { 
                 break; 
             }
 
             resultsContainer.innerHTML += `<ul class="result">
-            <li>${rating[i].name}</li>
-            <li>${rating[i].rating}</li>
-            <li>${rating[i].tags.length}</li> 
+            <li>${games[i].name}</li>
+            <li>${games[i].rating}</li>
+            <li>${games[i].tags.length}</li> 
             </ul>`;
         }
     } catch (error) {
@@ -35,4 +35,4 @@ async function getProperties() {
 
 }
 
-getProperties();
+getGamesProperties();
