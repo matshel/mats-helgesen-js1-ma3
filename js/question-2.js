@@ -17,11 +17,6 @@ async function getProperties() {
         resultsContainer.innerHTML = "";
 
         for (let i = 0; i < rating.length; i++) {
-            console.log(rating[i].name);
-
-            if (i === 7) { 
-                break; 
-            }
 
             resultsContainer.innerHTML += `<ul class="result">
             <li>${rating[i].name}</li>
