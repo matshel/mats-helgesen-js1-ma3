@@ -10,13 +10,19 @@ async function getProperties() {
 
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
 
         const rating = data.results;
 
         resultsContainer.innerHTML = "";
 
         for (let i = 0; i < rating.length; i++) {
+            
+            // console.log(rating[i].name);
+
+            if (i === 8) { 
+                break; 
+            }
 
             resultsContainer.innerHTML += `<ul class="result">
             <li>${rating[i].name}</li>
